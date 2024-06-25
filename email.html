@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container" id="contentToSend">
+    <h2>Send Information</h2>
+    <form id="emailForm">
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <input type="text" id="content" name="content" required>
+        </div>
+        <button type="submit">Send Email</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("Pgla0J5P-Fg3T2mIo"); // Replace 'Pgla0J5P-Fg3T2mIo' with your actual Public Key from EmailJS
+    })();
+
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const contentToSend = document.getElementById('contentToSend').outerHTML;
+
+        const templateParams = {
+            to_email: email,
+            message: contentToSend
+        };
+
+        emailjs.send('service_3m0gj5r', 'template_1n35qcd', templateParams)
+            .then(function(response) {
+                alert('Email sent successfully!');
+            }, function(error) {
+                alert('Failed to send email. ' + JSON.stringify(error));
+            });
+    });
+</script>
+
+</body>
+</html>

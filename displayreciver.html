@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Registered Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            background-image: url(blood.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .data-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .data-item {
+            margin-bottom: 10px;
+        }
+
+        .back-link, p {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registered Data</h2>
+    <div class="data-container">
+        <div class="data-item">
+            <label>Name:</label>
+            <span id="Name"></span>
+        </div>
+        <div class="data-item">
+            <label>Email:</label>
+            <span id="Email"></span>
+        </div>
+        <div class="data-item">
+            <label>Phone:</label>
+            <span id="Phone"></span>
+        </div>
+        <div class="data-item">
+            <label>Blood Group:</label>
+            <span id="BloodGroup"></span>
+        </div>
+        <div class="data-item">
+            <label>Hospital Name:</label>
+            <span id="Hospital"></span>
+        </div>
+        <div class="data-item">
+            <label>City:</label>
+            <span id="City"></span>
+        </div>
+        <div class="data-item">
+            <label>Urgency Level:</label>
+            <span id="Urgency"></span>
+        </div>
+        <div class="data-item">
+            <label>Additional Information:</label>
+            <span id="Additional-Info"></span>
+        </div>
+    </div>
+    <p>You have successfully registered!</p>
+    <a href="home.html" class="back-link">Back to Home</a>
+
+    <script>
+        // Retrieve form data from localStorage
+        const formData = JSON.parse(localStorage.getItem('formData'));
+
+        // Display form data on the view page
+        if (formData) {
+            document.getElementById('Name').textContent = formData.name;
+            document.getElementById('Email').textContent = formData.email;
+            document.getElementById('Phone').textContent = formData.phone;
+            document.getElementById('BloodGroup').textContent = formData.bloodGroup;
+            document.getElementById('Hospital').textContent = formData.hospital;
+            document.getElementById('City').textContent = formData.city;
+            document.getElementById('Urgency').textContent = formData.urgency;
+            document.getElementById('Additional-Info').textContent = formData.additionalInfo;
+        }
+    </script>
+</body>
+</html>

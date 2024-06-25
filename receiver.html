@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Receiver Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #faefef;
+            background-image: url(blood2.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #ece2e2;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #141313;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"], button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Blood Donation Receiver Request</h2>
+    <form id="donationForm">
+        <label for="Name">Full Name:</label>
+        <input type="text" id="Name" name="Name" required>
+
+        <label for="Email">Email:</label>
+        <input type="email" id="Email" name="Email" required>
+
+        <label for="Phone">Phone Number:</label>
+        <input type="tel" id="Phone" name="Phone" required>
+
+        <label for="Blood-group">Blood Group Needed:</label>
+        <select id="Blood-group" name="Blood-group" required>
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+
+        <label for="Hospital">Hospital Name:</label>
+        <input type="text" id="Hospital" name="Hospital" required>
+
+        <label for="City">City:</label>
+        <input type="text" id="City" name="City" required>
+
+        <label for="Urgency">Urgency Level:</label>
+        <select id="Urgency" name="Urgency" required>
+            <option value="">Select</option>
+            <option value="Urgent">Urgent</option>
+            <option value="Not Urgent">Not Urgent</option>
+        </select>
+
+        <label for="Additional-info">Additional Information:</label>
+        <textarea id="Additional-info" name="Additional-info" rows="4"></textarea>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function submitForm() {
+        // Get form data
+        var formData = {
+            name: document.getElementById("Name").value,
+            email: document.getElementById("Email").value,
+            phone: document.getElementById("Phone").value,
+            bloodGroup: document.getElementById("Blood-group").value,
+            hospital: document.getElementById("Hospital").value,
+            city: document.getElementById("City").value,
+            urgency: document.getElementById("Urgency").value,
+            additionalInfo: document.getElementById("Additional-info").value
+        };
+
+        // Store form data in localStorage
+        localStorage.setItem('formData', JSON.stringify(formData));
+
+        // Redirect to view.html
+        window.location.href = 'displayreciver.html';
+    }
+</script>
+
+</body>
+</html>

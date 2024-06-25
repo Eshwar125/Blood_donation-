@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for visiting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+          
+            background-image: url(blood7.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .container {
+            width: 80%;
+            margin: 100px auto;
+            text-align: center;
+        }
+        h1 {
+            color: #290099;
+        }
+        p {
+            margin-top: 0px;
+            color: #faf600;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 20px; /* Added margin to separate from other elements */
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        /* Dropdown Menu CSS */
+        .dropdown {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        .dropbtn {
+            background-color: none;
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <button class="dropbtn">⋮</button>
+    <div class="dropdown-content">
+        <a href="learnmore.html">Learn More</a>
+        <a href="impacts.html">Impact Stories</a>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Thank You for visiting!</h1>
+    <p>
+        Your generosity has the potential to save lives and make a positive impact on others in need.
+    </p>
+    <p>
+        We appreciate your kindness and willingness to contribute to the well-being of your community.
+    </p>
+    <a href="home.html" class="button">Back to Home</a>
+    <a href="support.html" class="button">Contact Support</a>
+</div>
+
+</body>
+</html>
