@@ -9,67 +9,101 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url(blood3.jpg);
+            background-image: url('blood3.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .header {
-            background-color: #333;
-            color: #fff;
+            background-color: transparent;
+            color: white;
             padding: 15px;
+            width: 100%;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            top: 80000px;
-            padding: 0 20px;
-            display: flex;
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Center items vertically */
-            flex-wrap: wrap; /* Allow wrapping of buttons */
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            margin: 10px;
-            border-radius: 5px;
-            text-align: center;
+        .header h1 {
+            margin: 0;
         }
         .back-button {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 10px 15px;
-            background-color: rgba(255, 255, 255, 0.5);
+            left: 15px;
+            top: 15px;
+            background-color: transparent;
             color: white;
             border: none;
+            font-size: 1em;
             cursor: pointer;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            margin: 10px;
+        }
+        .card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .card p {
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #666;
+        }
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+        }
+        .quote {
+            font-size: 1.2em;
+            color: white;
+            text-align: center;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Our Service</h1>
+        <a href="home.html">
+            <button class="back-button" onclick="history.back()">Back</button>
+        </a>        
+        <h1>Our Services</h1>
     </div>
-  <a href="home.html">
-    <button class="back-button" onclick="goBack()"> Back</button>
-  </a>
-    <div class="container">
-        <a href="registration.html" class="button">Donate</a>
-        <a href="receiver.html" class="button">Request Blood</a>
-        <!-- Replace '#' with actual links -->
+    <div class="content">
+        <div class="quote">"The simplest act of kindness is by giving blood; this is priceless."</div>
+        <div class="card">
+            <h2>Donate</h2>
+            <p>For Donating blood go below</p>
+            <a href="registration.html">Donate</a>
+        </div>
+        <div class="quote">"To give blood you need neither extra strength nor extra food, and you will save a life."</div>
+        <div class="card">
+            <h2>Request Blood</h2>
+            <p>For requesting blood click below</p>
+            <a href="receiver.html">Request</a>
+        </div>
     </div>
-
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>
