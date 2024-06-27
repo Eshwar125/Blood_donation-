@@ -3,96 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You for visiting</title>
+    <title>Thank You</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
             margin: 0;
-            padding: 0;
-          
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             background-image: url(blood3.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
         .container {
-            width: 80%;
-            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         h1 {
-            color: #290099;
+            margin-bottom: 20px;
         }
         p {
-            margin-top: 0px;
-            color: #faf600;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
-        .button {
+        .btn {
             display: inline-block;
-            background-color: #007bff;
-            color: #fff;
             padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
             text-decoration: none;
-            cursor: pointer;
-            margin-top: 20px; /* Added margin to separate from other elements */
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
         }
-        .button:hover {
+        .btn:hover {
             background-color: #0056b3;
         }
-        /* Dropdown Menu CSS */
-        .dropdown {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {background-color: #f1f1f1;}
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
-        }
-        .dropbtn {
-            background-color: none;
-            color: black;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
+        .quote {
+            font-style: italic;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Thank You for visiting!</h1>
-    <p>
-        Your generosity has the potential to save lives and make a positive impact on others in need.
-    </p>
-    <p>
-        We appreciate your kindness and willingness to contribute to the well-being of your community.
-    </p>
-    <a href="index.html" class="button">Back to Home</a>
-    <a href="support.html" class="button">Contact Support</a>
-</div>
-
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Thank you for visiting our blood bank website.</p>
+        <p>Your support means a lot to us.</p>
+         <div class="quote">
+            <p>"The blood you donate gives someone another chance at life. One day that someone may be a close relative, a friend, a loved one—or even you."</p>
+            <p>"Your blood donation is an amazing gift to the community."</p>
+        </div>
+        <p>Feel free to contact us if you have any questions or would like to contribute.</p>
+        <a href="index.html" class="btn">Back to Home</a>
+        <a href="support.html" class="btn">Contact Us</a>
+        
+    </div>
 </body>
 </html>
