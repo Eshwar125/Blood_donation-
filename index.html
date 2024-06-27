@@ -3,134 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Sign Up Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        body, html {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            background-color: white;
-            background-image: url(blood.png);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            background-image: url(blood3.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #ff0000b0;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            text-align: center;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-        li {
-            display: inline-block;
-            margin: 0 10px;
-        }
-        a {
-            text-decoration: none;
-            color: black; /* Text color */
-            padding: 10px 20px;
-            background-color: white; /* Button color */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        a:hover {
-            background-color: #f0f0f0;
-        }
-        .menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .menu .dots {
-            cursor: pointer;
-            font-size: 24px;
-        }
-        .menu ul {
-            display: none;
-            position: absolute;
-            top: 30px;
-            right: 0;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            list-style-type: none;
-            padding: 10px;
-        }
-        .menu ul li {
-            display: block;
-            margin: 0;
-        }
-        .menu ul a {
-            display: block;
-            padding: 10px;
-            color: black;
-        }
-        .menu ul a:hover {
-            background-color: #f0f0f0;
-        }
-        p {
-            color: #007bff; 
+        .welcome {
+            font-size: 48px;
+            color: white;
             font-weight: bold;
-            font-size: 24px; /* Adjust the font size as needed */
             text-align: center;
-            margin: 20px auto;
-            max-width: 600px;
+        }
+        .container {
+            display: none;
+            background-color: rgba(255, 255, 255, 0); /* fully transparent background */
+            padding: 20px;
+            border-radius: 20px; /* increased border-radius for more curvature */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 2px solid black; /* black border */
+            max-width: 400px; /* limit width to 400px */
+            width: 80%; /* responsive width */
+        }
+        .form-group {
+            margin-bottom: 15px;
+            color: #E9E4D4;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border-radius: 15px; /* increased border-radius for input fields */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 15px; /* increased border-radius for button */
+            cursor: pointer;
+            font-size: 16px; /* slightly smaller font size for button */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 15px;
+            color: red;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dots = document.querySelector('.dots');
-            const menu = document.querySelector('.menu ul');
-            dots.addEventListener('click', function() {
-                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
 </head>
 <body>
-    <div class="menu">
-        <span class="dots">&#x2022;&#x2022;&#x2022;</span>
-        <ul>
-            <li><a href="thankyou.html">Thank You</a></li>
-            <li><a href="support.html">Contact</a></li>
-            <li><a href="display.html">Donor Info</a></li>
-            <li><a href="displayreciver.html">Receiver Info</a></li>
-            <li><a href="learnmore.html">Learn more </a></li>
-            <li><a href="impacts.html">Impact stories</a></li>
-            <li><a href="video.html">Why & Whom </a></li>
-        </ul>
+    <div class="welcome" id="welcome">
+        Welcome! to Blood Bond
     </div>
-    <div class="container">
-        <h1>Home Page</h1>
-        <ul>
-            <li><a href="signin.html">Sign In</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="registration.html">Donor</a></li>
-            <li><a href="receiver.html">Receiver</a></li>
-            <li><a href="groupbd.html"> Blood Availability</a></li>
-        </ul>
+    <div class="container" id="signup">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username">
+        </div>
+        <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password">
+        </div>
+        <button onclick="signup()">Sign Up</button>
+        <div class="message" id="message"></div>
     </div>
-    <div>
-        <p>
-            "Your generosity has the potential to save lives and make a positive impact on others in need.
-        </p>
-        <p>
-            We appreciate your kindness and willingness to contribute to the well-being of your community."
-        </p>
-    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('signup').style.display = 'block';
+        }, 3000); // 3000ms = 3 seconds
+
+        function signup() {
+            const username = document.getElementById('signup-username').value;
+            const password = document.getElementById('signup-password').value;
+
+            if (username && password) {
+                localStorage.setItem(username, password);
+                document.getElementById('message').textContent = 'User signed up successfully!';
+                document.getElementById('message').style.color = 'green';
+                
+                // Redirect to login.html after successful signup
+                window.location.href = 'login.html';
+            } else {
+                document.getElementById('message').textContent = 'Please enter both username and password';
+                document.getElementById('message').style.color = 'red';
+            }
+        }
+    </script>
 </body>
 </html>
