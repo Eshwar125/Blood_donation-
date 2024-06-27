@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Scriptify&display=swap">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            background-image: url(Blood33.jpeg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0); /* Transparent background */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        a {
+            text-decoration: none;
+            color: black; /* Text color */
+            padding: 10px 20px;
+            background-color: white; /* Button color */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #f0f0f0;
+        }
+        .menu-container {
+            position: relative; /* Ensure relative positioning for absolute children */
+        }
+        
+        .menu {
+            position: absolute;
+            top: 40px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            z-index: 1; /* Ensure the menu appears above other elements */
+        }
+        .menu .dots {
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .menu ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            list-style-type: none;
+            padding: 10px;
+            z-index: 2; /* Ensure the menu appears above other elements */
+        }
+        .menu ul li {
+            display: block;
+            margin: 0;
+        }
+        .menu ul a {
+            display: block;
+            padding: 10px;
+            color: black;
+        }
+        .menu ul a:hover {
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: red;
+        }
+        p {
+            color: black; 
+            font-family: 'Scriptify', cursive; /* Apply Scriptify font */
+            font-weight: bold;
+            font-size: 24px; /* Adjust the font size as needed */
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px; /* Increased padding for larger button */
+            background-color: rgba(0, 123, 255, 0.7); /* Transparent with slight blue tint */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px; /* Increased font size */
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .cta-button:hover {
+            background-color: rgba(0, 123, 255, 1); /* Solid blue on hover */
+        }
+        .service-button {
+            text-align: center; /* Center the button horizontally */
+            margin-top: 20px; /* Adjust spacing from the paragraph */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dots = document.querySelector('.dots');
+            const menu = document.querySelector('.menu ul');
+            dots.addEventListener('click', function() {
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="menu-container">
+        
+        <div class="menu">
+            <span class="dots">&#x2022;&#x2022;&#x2022;</span>
+            <ul>
+                <li><a href="thankyou.html">Thank You</a></li>
+                <li><a href="support.html">Contact</a></li>
+                <li><a href="display.html">Donor Info</a></li>
+                <li><a href="displayreciver.html">Receiver Info</a></li>
+                <li><a href="learnmore.html">Learn more </a></li>
+                <li><a href="impacts.html">Impact stories</a></li>
+                <li><a href="video.html">Why & Whom </a></li>
+            </ul>
+        </div>
+    </div>
+  
+    <div class="container">
+        <h1>Blood Bond-"Be a Hero,Be a Donor"</h1>
+    </div>
+    <div>
+        <p>
+            "Your generosity has the potential to save lives and make a positive impact on others in need."
+        </p>
+        <p>
+            "We appreciate your kindness and willingness to contribute to the well-being of your community."
+        </p>
+    </div>
+  
+    <div class="service-button">
+        <a href="service.html" class="cta-button">Service</a>
+    </div>
+</body>
+</html>
