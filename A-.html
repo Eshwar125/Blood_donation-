@@ -3,92 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A- Blood Group Availability</title>
+    <title>A- Information</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            color: #333;
             margin: 0;
             padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url(blood3.jpg);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
         }
-        .container {
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        #history-container {
+            max-width: 800px;
+            margin: 0 auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
+
+        #formDataList {
+            list-style-type: none;
+            padding: 0;
         }
-        .blood-group {
-            background-color: #e0e0e0;
-            padding: 15px;
-            border-radius: 4px;
+
+        #formDataList li {
             margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .blood-group h2 {
-            margin: 0 0 10px;
+
+        #formDataList li:last-child {
+            margin-bottom: 0;
         }
-        .blood-group p {
-            margin: 5px 0;
+
+        #formDataList li p {
+            margin: 0;
+        }
+
+        .no-data-message {
+            text-align: center;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-      <a href="groupbd.html" class="back-button">&lt;</a>
-        <h1>A- Blood Group Availability</h1>
-
-        <div class="blood-group">
-            <h2>Obito Hospital</h2>
-            <p>Donor Name: kakashi</p>
-            <p>Gender: Female</p>
-            <p>Contact Number: 098-765-4321</p>
-            <p>Last Donated: June 18, 2024</p>
-            <p>Blood Quantity Available: 4 units</p>
-            <p>Health Conditions: None</p>
-        </div>
-        
-        <div class="blood-group">
-            <h2>Madara Hospital</h2>
-            <p>Donor Name:Toni</p>
-            <p>Gender: Male</p>
-            <p>Contact Number: 345-678-9012</p>
-            <p>Last Donated: June 22, 2024</p>
-            <p>Blood Quantity Available: 2 units</p>
-            <p>Health Conditions: None</p>
-        </div>
-        <div class="blood-group">
-            <h2>Jiraya Hospital</h2>
-            <p>Donor Name:Tsunade</p>
-            <p>Gender: Female</p>
-            <p>Contact Number: 234-567-8901</p>
-            <p>Last Donated: June 15, 2024</p>
-            <p>Blood Quantity Available: 3 units</p>
-            <p>Health Conditions: None</p>
-        </div>
-         <div class="blood-group">
-            <h2>kakashk Hospital</h2>
-            <p>Donor Name:rin</p>
-            <p>Gender: Female</p>
-            <p>Contact Number: 234-567-8901</p>
-            <p>Last Donated: June 15, 2024</p>
-            <p>Blood Quantity Available: 3 units</p>
-            <p>Health Conditions: None</p>
-        </div>
-      <a href="support.html" class="support-button">contact</a>
+    <h2>A- Information</h2>
+    <div id="history-container">
+        <ul id="formDataList"></ul>
+        <p class="no-data-message">No form submissions found.</p>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formDataList = document.getElementById('formDataList');
+            const formDataArray = JSON.parse(localStorage.getItem('formDataArray')) || [];
+
+            if (formDataArray.length > 0) {
+                formDataArray.forEach(formData => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <p><strong>Name:</strong> ${formData.name}</p>
+                        <p><strong>Email:</strong> ${formData.email}</p>
+                        <p><strong>Phone:</strong> ${formData.phone}</p>
+                        <p><strong>Blood Group:</strong> ${formData.blood_group}</p>
+                        <p><strong>Date:</strong> ${formData.date}</p>
+                    `;
+                    formDataList.appendChild(listItem);
+                });
+            } else {
+                const noDataMessage = document.createElement('li');
+                noDataMessage.textContent = 'No form submissions found.';
+                noDataMessage.classList.add('no-data-message');
+                formDataList.appendChild(noDataMessage);
+            }
+        });
+    </script>
 </body>
 </html>
