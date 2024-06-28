@@ -55,9 +55,30 @@
             text-align: center;
             color: #999;
         }
+   /* Styling for the back button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
+    <!-- Back button -->
+    <button class="back-button" onclick="goBack()">Back</button>
     <h2>A+ Information</h2>
     <div id="history-container">
         <ul id="formDataList"></ul>
