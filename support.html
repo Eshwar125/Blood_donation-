@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Donation Contact Support</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-            margin: 0;
-            background-image: url(blood.png);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-        }
-        .container {
-            text-align: center; /* Added to center align the contents */
-            background: rgba(255, 255, 255, 0.8); /* Added a background color with transparency for readability */
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .container h2 {
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left; /* Reset text alignment for form labels and inputs */
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
-        .form-group textarea {
-            height: 100px;
-        }
-        .form-group button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .form-group button:hover {
-            background-color: #45a049;
-        }
-        .button {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Form</title>
+  <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #faefef;
+        background-image: url(blood2.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .field {
+        margin-bottom: 10px;
+      }
+
+      .field label {
+        display: block;
+        font-size: 12px;
+        color: #777;
+      }
+
+      .field input {
+        display: block;
+        min-width: 250px;
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+      input[type="submit"] {
+        display: block;
+        padding: 6px 30px;
+        font-size: 14px;
+        background-color: #4460AA;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #36518d;
+      }
+       .button {
             display: inline-block;
             background-color: #007bff;
             color: #fff;
@@ -72,7 +71,7 @@
         .button:hover {
             background-color: #0056b3;
         }
-        .social-links {
+      .social-links {
             text-align: center;
             margin-top: 20px;
         }
@@ -90,66 +89,76 @@
         .social-links a:hover {
             background-color: #2d4373;
         }
-    </style>
+      
+  </style>
 </head>
 <body>
+  <div class="container">
+    <form id="form">
+      <div class="field">
+        <label for="from_name">Name</label>
+        <input type="text" name="from_name" id="from_name">
+      </div>
+      <div class="field">
+        <label for="email_id">Email</label>
+        <input type="text" name="email_id" id="email_id">
+      </div>
+      <div class="field">
+        <label for="phone_number">Phone_number</label>
+        <input type="text" name="phone_number" id="phone_number">
+      </div>
+      <div class="field">
+        <label for="blood_group">Blood_group</label>
+        <input type="text" name="blood_group" id="blood_group">
+      </div>
+      <div class="field">
+        <label for="hospital_name">Hospital_name</label>
+        <input type="text" name="hospital_name" id="hospital_name">
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <input type="text" name="message" id="message">
+      </div>
 
-<div class="container">
-    <h2>Contact Support</h2>
-    <form id="contactForm" action="#">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <div class="form-group">
-           <button type="submit" id="submitBtn">Submit</button>
-        </div>
+      <input type="submit" id="button" value="Send Email">
     </form>
-    <div class="social-links">
+     <div class="social-links">
         <a href="https://ig.me/j/AbaZ9tVItIbx9vpS/" target="_blank">Instagram</a>
         <a href="https://facebook.com/groups/990597093072375/" target="_blank">Facebook</a>
         <a href="https://chat.whatsapp.com/FdN6Vkld8LwLyTWll04PpI" target="_blank">Whatsapp</a>
     </div>
     <!-- New button for Back to Home inside the container -->
     <div>
-        <a href="home.html" class="button">Back to home</a>
+        <a href="home.html" class="button">Back to Home</a>
     </div>
+  </div>
 
-    <!-- Success message -->
-    <p id="successMessage" style="display: none; color: green; margin-top: 20px;">Your message has been successfully submitted!</p>
-</div>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting
+  <script type="text/javascript">
+    emailjs.init('Pgla0J5P-Fg3T2mlo');
+    
+    const btn = document.getElementById('button');
 
-        // Here you would typically perform form validation and submission
-        // For demonstration purposes, we'll just show the success message
+    document.getElementById('form')
+     .addEventListener('submit', function(event) {
+       event.preventDefault();
 
-        document.getElementById('successMessage').style.display = 'block';
+       btn.value = 'Sending...';
 
-        // Optionally, clear the form fields after successful submission
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('message').value = '';
+       const serviceID = 'service_3m0gj5r';
+       const templateID = 'template_to1phvj';
 
-        // Optionally, you can use localStorage to persist the success message
-        localStorage.setItem('formSubmitted', 'true');
+       emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          btn.value = 'Send Email';
+          alert('Sent!');
+        }, (err) => {
+          btn.value = 'Send Email';
+          alert(JSON.stringify(err));
+        });
     });
-
-    // Check if form was submitted successfully previously (using localStorage)
-    if (localStorage.getItem('formSubmitted') === 'true') {
-        document.getElementById('successMessage').style.display = 'block';
-    }
-</script>
-
+  </script>
 </body>
 </html>
